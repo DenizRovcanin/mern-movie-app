@@ -1,0 +1,16 @@
+#formHolder {
+  height: 100%;
+
+  >.column {
+    max-width: 500px;
+    margin: 10% auto;
+  }
+
+  form + button {
+    width: 100%;
+  }
+}
+
+#loaderHolder {
+  display: table-row;
+}
