@@ -28,3 +28,12 @@ This will be done by typing `npm install`. When dependencies are installed, to s
 If you prefer [yarn](https://www.npmjs.com/package/yarn) more to install dependencies please type: `yarn` and to start the project: `yarn start.`
 
 Your server will start on [http://localhost:8081](http://localhost:8081).
+
+### Tests
+
+Current test coverage:
+
+* Registration (Scenarios: `shouldRegisterUser_returns200`)
+* Login (Scenarios: `shouldLoginUser_returns200`, `shouldLoginUser_returns401`)
+
+To start tests, please type `npm test` or `yarn test`. Mongo ***has to be started*** prior to running tests.
