@@ -14,10 +14,15 @@ describe('Test user registration and login', () => {
         "password": `testPassword${Math.floor(Math.random()*(999-100+1)+100)}`,
     };
 
+    const wrongTestData = {
+        "username": `wrongUser${Math.floor(Math.random()*(999-100+1)+100)}`,
+        "password": `wrongPassword${Math.floor(Math.random()*(999-100+1)+100)}`,
+    };
+
     it('shouldRegisterUser_returns200', (done) => {
         //register test user
         chai.request(server)
-            .post('/api/user/signup') //should be in config file
+            .post('/api/user/signup')
             .send(testUserData)
             .end((error, res) => {
                 assert.equal(res.status, 200);
@@ -28,7 +33,7 @@ describe('Test user registration and login', () => {
     it('shouldLoginUser_returns200', (done) => {
         //login test user
         chai.request(server)
-            .post('/api/user/login') //should be in config file
+            .post('/api/user/login')
             .send(testUserData)
             .end((error, res) => {
                 assert.equal(res.status, 200);
@@ -37,13 +42,9 @@ describe('Test user registration and login', () => {
     });
 
     it('shouldLoginUser_returns401', (done) => {
-        const wrongTestData = {
-            "username": `wrongUser${Math.floor(Math.random()*(999-100+1)+100)}`,
-            "password": `wrongPassword${Math.floor(Math.random()*(999-100+1)+100)}`,
-        };
         //login test user
         chai.request(server)
-            .post('/api/user/login') //should be in config file
+            .post('/api/user/login')
             .send(wrongTestData)
             .end((error, res) => {
                 assert.equal(res.status, 401);
