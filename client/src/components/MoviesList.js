@@ -24,7 +24,6 @@ class MoviesList extends Component {
             })
         }
 
-        console.log(this.props)
     }
 
     userLogout = () => {
